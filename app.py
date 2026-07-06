@@ -53,6 +53,9 @@ if user_input:
             stream = client.chat.completions.create(
                 model="minimaxai/minimax-m3",
                 messages=st.session_state.messages,
+                max_tokens=2048,
+                temperature=1.0,
+                top_p=0.95,
                 stream=True,
             )
             for chunk in stream:
