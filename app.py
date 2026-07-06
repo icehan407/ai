@@ -51,11 +51,11 @@ if user_input:
 
         try:
             stream = client.chat.completions.create(
-                model="minimaxai/minimax-m3",
+                model="z-ai/glm-5.2",
                 messages=st.session_state.messages,
-                max_tokens=2048,
+                max_tokens=16384,
                 temperature=1.0,
-                top_p=0.95,
+                top_p=1.0,
                 stream=True,
             )
             for chunk in stream:
